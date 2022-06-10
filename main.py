@@ -1,5 +1,7 @@
 import os
 import requests
+import time
+from datetime import datetime
 from dotenv import load_dotenv
 from twilio.rest import Client
 
@@ -41,7 +43,16 @@ def send_message(quote:str):
     print(message.sid)
 
 def main():
-    send_message(get_quote())
 
+    while True:
+        current_time = datetime.now()
+        if current_time.hour == 8 and 29 <= current_time.minute <= 31:
+            send_message(get_quote())
+            print("Message Sent. Waiting an hour")
+            time.sleep(3600)
+        else:
+            print("Not time to send. Be back in a minute to check again")
+            time.sleep(60)
+        
 if __name__ == "__main__":
     main()
