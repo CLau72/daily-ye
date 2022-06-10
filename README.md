@@ -19,7 +19,7 @@ The script allows you to pass in environment variables for API keys using a **.e
 |Environment Variable|Required?|Description|
 |-|-|-|
 |TWILIO_SID| [x] |Twilio Account SID value|
-|TWILIO_API| [x] |Twilio API Key|
+|TWILIO_API_KEY| [x] |Twilio API Key|
 |FROM_PHONE| [x] |Phone number provided by Twilio to send the text message|
 |TO_PHONE| [x] |Phone number of the phone receiving the message|
 
